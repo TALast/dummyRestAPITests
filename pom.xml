@@ -98,7 +98,7 @@
 								<resource>
 									<directory>${project.build.directory}</directory>
 									<includes>
-										<include>${project.build.finalName}-tests.jar</include>
+										<include>${project.build.finalName}.jar</include>
 									</includes>
 								</resource>
 							</resources>
