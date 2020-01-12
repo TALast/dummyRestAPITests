@@ -34,7 +34,6 @@ public class stepDefinitions implements En{
         });
 
         Then("^response data values match the employee$", () -> {
-            System.out.println("RESPONSE: " + employeeHelper.getLastResponse());
             assertThat(employeeHelper.getTestEmployee().getName())
                 .as("Employee's name is inserted correctly")
                 .isEqualTo(employeeHelper.getResponseDataValue("name"));
