@@ -11,8 +11,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.List;
 
-// TODO check the static import
-
 public class EmployeeHelper {
     private DummyAPIWorld dummyAPIWorld;
     private RequestSender request;
@@ -101,18 +99,15 @@ public class EmployeeHelper {
         dummyAPIWorld.getTestEmployee().setName(employee.getName());
         dummyAPIWorld.getTestEmployee().setSalary(employee.getSalary());
         dummyAPIWorld.getTestEmployee().setAge(employee.getAge());
-        System.out.println("Updated Employee= " + dummyAPIWorld.getTestEmployee().toString());
     }
 
     public String getCreateCustomerResponseStatus() {
-        System.out.println("Last Response: " + lastResponse);
         JSONObject jsonResponse = DummyAPIJSONParser.getJSONObjectFromString(lastResponse);
         return jsonResponse.getString("status");
     }
 
     public boolean validateObjectExists(String object) {
         JSONObject jsonResponse = DummyAPIJSONParser.getJSONObjectFromString(lastResponse);
-        System.out.println("The object: " + object + " exists: " + jsonResponse.getJSONObject(object).toString());
         return jsonResponse.getJSONObject(object) != null;
     }
 
@@ -185,7 +180,6 @@ public class EmployeeHelper {
         }
         reqBody = reqBody.concat("}");
 
-        System.out.println("THE REQUEST BODY is: " + reqBody);
         return reqBody;
     }
 
